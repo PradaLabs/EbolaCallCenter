@@ -2,7 +2,7 @@
 angular.module('ebolaCallCenterApp')
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
-      .when('/', {
+      .when('/main/', {
         templateUrl: 'app/main/main.html',
         controller: 'MainCtrl'
       }).when('/cases/', {
@@ -15,7 +15,10 @@ angular.module('ebolaCallCenterApp')
         //     });
         //   }
         // }
-      }).otherwise({
+      }).when('/',{
+         templateUrl: 'app/login/login.html',
+         controller: 'LoginCtrl',
+        }).otherwise({
         redirectTo: '/'
       });
 
