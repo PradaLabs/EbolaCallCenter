@@ -8,6 +8,7 @@ angular.module('ebolaCallCenterApp')
       }).when('/cases/', {
         templateUrl: 'app/cases/index.html',
         controller: 'CaseCtrl',
+<<<<<<< HEAD
         // resolve: {
         //   cases: function($http) {
         //     return $http.get('/api/cases').then(function(response) {
@@ -19,6 +20,16 @@ angular.module('ebolaCallCenterApp')
          templateUrl: 'app/login/login.html',
          controller: 'LoginCtrl',
         }).otherwise({
+=======
+        resolve: {
+          cases: function($http) {
+            return $http.get('/api/cases').then(function(response) {
+              return response.data
+            });
+          }
+        }
+      }).otherwise({
+>>>>>>> e56428992a7871e4d4a1322b14cef116bb41539b
         redirectTo: '/'
       });
 
